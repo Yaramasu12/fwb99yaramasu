@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+     - var results = [{"name":"Deer", "place":"Maryville","weight":400},{"name":"Lion","place":"Zoo","weight":800},{"name":"Dog","place":"USA","weight":150}]
+       div(class="container-fluid")
+         div(class="row")
+            each h,k in results
+              div(class="col-sm-2" onClick=`buy(${k})`)
+                p #{h.color}
+                p #{h.quantity}
+                p #{h.cost}
+                
+
+
+          
+                script.
+                     function  buy(g){
+
+                        alert(`You purchased item ${g+1}.`)
+
+                     }
